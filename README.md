@@ -1,90 +1,62 @@
 # Programming Practicals
 
-This repository contains three take-home programming practicals. Each practical is designed to demonstrate your skills in PHP development, data handling, and working with existing codebases. Please follow the instructions for each practical below.
+Two practicals. Plan on about **4 hours total**.
+
+If you hit 4 hours and aren't finished, stop and write down what you'd do next instead. We'd rather see a smaller finished thing plus your notes than a rushed large one. Nothing here needs to be polished — no styling, no test suite, no edge-case hardening unless you think it matters.
+
+Both practicals use Laravel and MariaDB, running in Docker. Working skeletons are provided — `docker compose up --build` in either folder and you're going.
 
 ---
 
-## Practical 1: Dockerized PHP Mini Application
+## Practical 1: Equipment Tracker
 
-**Overview**
-Create a small PHP application that manages a simple dataset. The goal is to demonstrate basic application structure, data handling, and comfort working in a containerized environment.
+Our maintenance staff track equipment in a shared spreadsheet. Several people edit it at the same time, and it goes wrong regularly — duplicated rows, someone overwriting someone else's changes, and no record of what changed or when.
 
-**Requirements**
-- PHP
-- Dockerized application
-- `docker-compose.yml` preferred
-- MariaDB-compatible SQL database (SQLite is acceptable)
-- A README explaining how to run and use the application
+We'd like to replace it with something small and web-based.
 
-**Functionality**
-- Creating records
-- Listing records
-- Updating an existing record
+Build it in `takehome1-app/`. It's a bare Laravel skeleton wired up to MariaDB, with an `Equipment` model and migration stubbed out and nothing else. The homepage currently returns a placeholder `{"status":"ok"}` so you can confirm the containers came up — replace it with whatever you build. Change any of the rest of it you want.
 
-**Notes**
-- Frameworks are optional
-- The user interface can be minimal
-- Focus on clarity, readability, and maintainability
-- You may modify the provided structure or files if needed. If you do, explain why in the README
+Staff need to be able to add equipment, see what's on the list, and update a record when something changes. These are maintenance staff, not developers — they need screens they can use in a browser, not an API they'd have to call. It can look as plain as you like.
 
-**Deliverables**
-- Source code
-- Dockerfile and docker-compose.yml
-- README with setup and usage instructions
+Then add one report — a page, route, or artisan command that answers a question an administrator would actually ask about this data. **Pick the question yourself** and tell us in your README why you picked that one.
+
+**Send us**
+- The working application
+- A README covering how to run it, what you built, and any assumptions you made along the way
 
 ---
 
-## Practical 2: Reporting-Oriented Data Task
+## Practical 2: Add Filtering to an Existing App
 
-**Overview**
-Extend your application from the previous practical, or use a provided dataset, to produce reports intended for administrative users. The goal is to demonstrate your ability to reason about data and produce meaningful summaries.
+`takehome2-app/` is a small internal tool we already use to list assets. It works. It isn't beautiful.
 
-**Requirements**
-- Create one or more reports that answer practical administrative questions, such as:
-  - Counts of records grouped by a category (status, department, etc.)
-  - Records that have not been updated within a chosen timeframe
-  - Summary data that would be useful to an administrator
+Someone has asked to be able to narrow the list down — by when things were added, and by department or category.
 
-**Notes**
-- Visual presentation is optional
-- Focus on clarity and usefulness of the output rather than styling
-- You may choose how the report is accessed as long as instructions are clear in README (endpoint, page, or script)
+Add that. Leave the rest of the app how you found it.
 
-**Deliverables**
-- A PHP script or endpoint that outputs structured data (JSON is acceptable)
-- A brief explanation of any assumptions made
-
+**Send us**
+- The updated application
+- A short note on what you changed and why
 
 ---
 
-## Practical 3: Extend an Existing Codebase
+## AI Usage
 
-**Overview**
-You will be provided with a small existing PHP project. Your task is to add a specific feature while preserving the current behavior of the application. This exercise is intended to evaluate your ability to work within an existing codebase.
+Using AI tools (Claude, Copilot, ChatGPT, etc.) is expected and welcome — we use them daily. What we're interested in is how you work with them, not whether you used one.
 
-**Task**
-Extend the existing listing functionality to support:
-- Filtering by date range
-- Filtering by category or department
+If you used an AI tool for any part of this, include one of the following:
+- A shared link to the relevant chat, or
+- An exported transcript, or
+- A short written summary of what you asked for, what came back, and what you changed, corrected, or rejected
 
-The feature should integrate naturally with the existing application.
-
-**Requirements**
-- Keep changes focused and minimal
-- Maintain existing behavior
-- Do not rewrite the application
-- Update or add documentation as needed
-
-**Deliverables**
-- Updated source code
-- A brief explanation describing what was changed and why
+There's no minimum or maximum amount of AI use expected. We're mainly interested in your review process — what you caught, what you'd keep as-is, and why.
 
 ---
 
-## General Instructions
+## Submitting
 
-1. Submit your completed exercises via email to: joshe@provo.edu
-2. Please submit your work by: 6:00 AM, Thursday, 2/26/26
-3. Include a README in each test/project with setup and usage instructions.
-4. Ensure your code is clear, readable, and maintainable.
-5. If you make any assumptions or modifications, document them clearly.
+1. Email your work to joshe@provo.edu by **6:00 AM, Monday, August 3, 2026**
+2. A git repo link is preferred over a zip if you have one — we like seeing commit history, though it's not required
+3. Document your assumptions and any changes you made to the provided structure
+
+We'll walk through what you built in the interview. Be ready to talk through why you made the calls you made — that conversation matters more to us than the code itself.

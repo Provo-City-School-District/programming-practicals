@@ -1,0 +1,10 @@
+.DS_Store
+
+# This repo is public — candidates can see everything in it.
+# Interviewer material (scoring, questions, answer keys) lives outside the repo,
+# in ../programming-practicals-interviewer-notes/. These patterns are a safety net
+# in case anything gets copied back in by mistake.
+docs/
+*interviewer*
+*-notes.md
+scoring*
