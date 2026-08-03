@@ -55,7 +55,7 @@ There's no minimum or maximum amount of AI use expected. We're mainly interested
 
 ## Submitting
 
-1. Email your work to joshe@provo.edu by **6:00 AM, Monday, August 3, 2026**
+1. Email your work to braxtona@provo.edu by **8:00 AM, Tuesday, August 4, 2026**
 2. A git repo link is preferred over a zip if you have one — we like seeing commit history, though it's not required
 3. Document your assumptions and any changes you made to the provided structure
 
